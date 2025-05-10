@@ -1,0 +1,13 @@
+.side-by-side {
+    display: flex;
+  }
+  
+  .text-item {
+    margin-right: 20px; 
+    padding: 20px;
+  }
+
+  .p{
+    color: white;
+  }
+  
