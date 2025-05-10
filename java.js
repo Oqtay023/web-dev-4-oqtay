@@ -88,70 +88,70 @@ function checkEmail() {
     var email = document.getElementById("emailofc").value;
     var error = document.getElementById("error");
 
-    // Clear any previous error
     error.textContent = "";
 
-    // Check if email is empty
     if (email === "") {
       error.textContent = "Email is required!";
       return;
     }
 
-    // Check if "@" is missing
+
     if (email.indexOf("@") === -1) {
       error.textContent = "Email must contain '@'";
       return;
     }
 
     alert("Email is OK!");
-     emailplace = document.getElementById(emailofc).value;
      
   }
 
   
   function addInput() {
-      // Create a new input element
       var newInput = document.createElement("input");
-
-      // Optionally set properties like type or placeholder
       newInput.type = "text";
       newInput.placeholder = "Enter something";
-
-      // Append the new input to the container
+      newInput.className = "dynamicInput"; 
       document.getElementById("inputContainer").appendChild(newInput);
       document.getElementById("inputContainer").appendChild(document.createElement("br"));
-     // add line break for spacing
     }
 
-     function addInputt() {
-      // Create a new input element
-      var newInput = document.createElement("input");
 
-      // Optionally set properties like type or placeholder
+
+      function addInputt() {
+      var newInput = document.createElement("input");
       newInput.type = "text";
       newInput.placeholder = "Enter something";
-
-      // Append the new input to the container
+      newInput.className = "dynamicInput"; 
       document.getElementById("inputContainerr").appendChild(newInput);
       document.getElementById("inputContainerr").appendChild(document.createElement("br"));
-      // add line break for spacing
     }
+
 
      function addInputtt() {
-      // Create a new input element
       var newInput = document.createElement("input");
-
-      // Optionally set properties like type or placeholder
       newInput.type = "text";
       newInput.placeholder = "Enter something";
+      newInput.className = "dynamicInput"; 
 
-      // Append the new input to the container
       document.getElementById("inputContainerrr").appendChild(newInput);
       document.getElementById("inputContainerrr").appendChild(document.createElement("br"));
-      // add line break for spacing
     }
 
-    function save(){
-      alert("Your information succesfully saved !")
+
+
+
+
+
+   function save() {
+      var inputs = document.getElementsByClassName("dynamicInput");
+      var values = []; 
+
+      for (var i = 0; i < inputs.length; i++) {
+        values.push(inputs[i].value);
+      }
+
+      alert("Your information has been successfully saved!");
+
+      console.log(values);
     }
   
